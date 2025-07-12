@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Success");
+})
+
 app.post("/send-push", async (req, res) => {
   const { tokens, title, body, data } = req.body;
 
